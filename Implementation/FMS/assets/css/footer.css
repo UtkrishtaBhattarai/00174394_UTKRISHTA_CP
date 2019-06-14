@@ -1,0 +1,56 @@
+.full {
+    width: 100%;	
+}
+.gap {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	display: block;
+}
+.footer {
+	background: #222;
+	height: auto;
+	padding-bottom: 20px;
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+}
+.footer p {
+	margin: 0;
+}
+.footer img {
+	max-width: 100%;
+}
+
+.footer ul {
+	font-size: 13px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 10px;
+	color: #7F8C8D;
+}
+.footer ul li a {
+	padding: 0 0 5px 0;
+	display: block;
+}
+.footer a {
+	color: #78828D
+}
+
+
+
+
+
+
+.footer-bottom p.pull-left {
+	padding-top: 6px;
+
+
+
+
+#clr
+{
+	color: white;
+}
