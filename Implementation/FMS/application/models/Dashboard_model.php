@@ -25,6 +25,13 @@ Class Dashboard_model extends CI_Model
      	}
 		
 	}
+
+	public function delete()
+	{
+		$id=$this->session->userdata('uid');
+
+		$this->db->query('DELETE from registration where id='.$id);
+	}
 	public function get5posts()
 	{
 		$this->db->select('*');

@@ -20,10 +20,19 @@
                 <div class="col-sm-12">
                     <h1 class="text-center">Login</h1>
                 </div>
-                <?php if($this->session->flashdata('errors'));
-            echo '<div class="alert alert-warning">';
+                <?php if($this->session->flashdata('errors'))
+                {
+                    echo '<div class="alert alert-warning">';
             echo $this->session->flashdata('errors');
             echo "</div>";
+                }
+if($this->session->flashdata('login_fail'))
+                {
+                    echo '<div class="alert alert-warning">';
+            echo $this->session->flashdata('login_fail');
+            echo "</div>";
+                }
+                
       ?>
 
                 <form method="post" action="<?php echo base_url()?>Login/check">

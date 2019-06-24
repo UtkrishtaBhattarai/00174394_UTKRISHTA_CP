@@ -10,7 +10,15 @@
 		public function index()
 		{
 			$data['staff']=$this->Staff_model->selectstaff();
-			$this->load->view('templates/header1');
+			if(null ==($this->session->userdata('uid')))
+			{
+				$this->load->view('templates/header1');
+			}
+			else
+			{
+				$this->load->view('templates/header');
+			}
+			
 			$this->load->view('staffs/index', $data);
 			$this->load->view('templates/footer');
 		}

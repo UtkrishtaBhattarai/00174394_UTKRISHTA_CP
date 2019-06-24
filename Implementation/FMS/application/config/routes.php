@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //This is the url for detailing controller name not for view//
 //i was confused 
 
-
+$route['help']='Help/index';
 $route['viewfeedback']='Feedbackview/index';
 $route['addpoll']='Addpoll/index';
 $route['viewf']='Feedbackview/index';

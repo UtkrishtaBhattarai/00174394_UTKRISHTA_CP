@@ -12,7 +12,14 @@
 		public function index()
 		{
 			$data="Registration";
-			$this->load->view('templates/header1');
+			if(null ==($this->session->userdata('uid')))
+			{
+				$this->load->view('templates/header1');
+			}
+			else
+			{
+				$this->load->view('templates/header');
+			}
 			$this->load->view('registration/index', $data);
 			$this->load->view('templates/footer');
 		}

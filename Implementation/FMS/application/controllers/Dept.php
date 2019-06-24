@@ -15,7 +15,7 @@
 			$this->load->view('department/index',$data);
 		}
 
-		Public function add()
+		public function add()
 		{
 		$this->load->helper(array('form', 'url'));
 		$this->form_validation->set_rules('departmentname','departmentname','required');

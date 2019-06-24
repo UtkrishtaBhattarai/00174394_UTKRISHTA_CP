@@ -5,7 +5,14 @@
 				show_404();
 			}
 			$data['title'] = ucfirst($page);
-			$this->load->view('templates/header1');
+			if(null ==($this->session->userdata('uid')))
+			{
+				$this->load->view('templates/header1');
+			}
+			else
+			{
+				$this->load->view('templates/header');
+			}
 			$this->load->view('pages/'.$page, $data);
 			$this->load->view('templates/footer');
 		}

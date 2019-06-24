@@ -5,23 +5,34 @@
 ?>
  <div class="container">
      <div class="row">
-         <div class="col-sm-7 col-sm-offset-3">
-             <form action="Forum/addquery" method="post" enctype="multipart/form-data">
-                 <div class="form-group">
-                     <div class="alert alert-danger">
-                         <label class="control-label " for="name2">
+        <form action="Forum/addquery" method="post" enctype="multipart/form-data">
+        <div class="comments-container">
+             <ul id="comments-list" class="comments-list">
+                 <li>
+                     <div class="comment-main-level">
+                         <!-- Avatar -->
+                         <!-- Contenedor del Comentario -->
+                         <div class="comment-box">
+                             <div class="comment-head">
+                                 <h6 ><a href="">
+                                     </a></h6>
+                                      <h6>
+                                     </h6>
+                             </div>
+                             <div class="comment-content">
+                                <label class="control-label " for="name2">
                              Post Your Query
                          </label>
                          <textarea class="form-control" width="100%" height="50vh" required="required" name=query></textarea>
                          <div class="form-group"> <br>
                              <input type="submit" name="post" value="Post" class="btn btn-success">
                          </div>
+                             </div>
+                         </div>
                      </div>
-                 </div>
-             </form>
-         </div>
-     </div>
+       
  </div>
+</form>
  <div class="container">
      <div class="row">
          <!-- Contenedor Principal -->
@@ -36,7 +47,7 @@
                      <div class="comment-main-level">
                          <!-- Avatar -->
                          <p hidden="">QID:<?php echo($questions->qid);?></p>
-                         <div class="comment-avatar"><img src="" alt=""></div>
+                         <div class="comment-avatar"><img src="<?php echo base_url();?>assets/img/user.png" alt=""></div>
                          <!-- Contenedor del Comentario -->
                          <div class="comment-box">
                              <div class="comment-head">
@@ -66,7 +77,7 @@ $quer = $this->db->query("SELECT answer.ans_id,answer.date,answer.id,answer.answ
                      <ul class="comments-list reply-list">
                          <li>
                              <!-- Avatar -->
-                             <div class="comment-avatar"><img src="" alt="">
+                             <div class="comment-avatar"><img src="<?php echo base_url();?>assets/img/user.png" alt="">
                              </div>
                              <!-- Contenedor del Comentario -->
                              <div class="comment-box">
@@ -85,7 +96,7 @@ $quer = $this->db->query("SELECT answer.ans_id,answer.date,answer.id,answer.answ
 <ul class="comments-list reply-list">
                          <li>
                              <!-- Avatar -->
-                             <div class="comment-avatar"><img src="" alt="">
+                             <div class="comment-avatar"><img src="<?php echo base_url();?>assets/img/user.png" alt="">
                              </div>
                             <form method="post" action="Forum/addreply">
                              <div class="comment-box">
@@ -108,6 +119,9 @@ $quer = $this->db->query("SELECT answer.ans_id,answer.date,answer.id,answer.answ
      <?php } ?>
  </div>
 </div>
+</div>
+
+
 
 
 

@@ -95,15 +95,27 @@ if($this->session->flashdata('update'))
                          <div class="form-group">
                              <div>
                                  <input type="submit" class="btn btn-success" value="Update" id="btn">
-                             </div> <br>
-                             <p><input type="reset" name="reset" class="btn btn-success" id="btn"></p>
+                             </div>
                          </div>
                      </div>
+                      <?php echo form_close(); ?>
+                      <form action="<?php echo base_url();?>Details/delete">
                      <div class="col-sm-12" id="user-log">
+                        <p><input type="submit" value="DeleteAccount"class="btn btn-success" id="btn" onClick="return doconfirm();"></p>
+                        <?php echo form_close(); ?>
                          <p align="center">Already a user? <a href="<?php echo base_url();?>login"> Login Now!</a></p>
                      </div>
-                     <?php echo form_close(); ?><br />
-
+                    <br />
+<script>
+function doconfirm()
+{
+    job=confirm("Are you sure to delete permanently?");
+    if(job!=true)
+    {
+        return false;
+    }
+}
+</script>
              </div>
              <h2 align="center">Notices..</h2>
              <div class="col-sm-7">

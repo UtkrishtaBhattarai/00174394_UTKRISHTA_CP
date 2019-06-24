@@ -51,5 +51,12 @@ Class Details extends CI_Controller
 			redirect('details');
 
 		}
+		public function delete()
+		{
+			$id=$this->session->userdata('uid');
+			$this->Dashboard_model->delete($id);
+			$this->session->unset_userdata('uid');
+			redirect('login');
+		}
 
 }

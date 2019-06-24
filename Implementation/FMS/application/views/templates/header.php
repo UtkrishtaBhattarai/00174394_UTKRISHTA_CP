@@ -35,7 +35,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">  
       <li><a href="<?php echo base_url('logout');?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-      <li><a href=""><span  class="fa fa-life-ring" aria-hidden="true"></span>Support</a></li>
+      <li><a href="<?php echo base_url();?>help"><span  class="fa fa-life-ring" aria-hidden="true"></span>Support</a></li>
     </ul>
   </div>
 </nav>
