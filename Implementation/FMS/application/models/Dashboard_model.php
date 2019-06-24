@@ -10,24 +10,32 @@ Class Dashboard_model extends CI_Model
 		$row = $query->row();
 		return $row;
 	}
-	public function update($fname,$lname,$deptname,$address,$email,$username,$comment)
+	public function update($data)
 	{
-		$data=array($fname,$lname,$deptname,$address,$email,$username,$comment);
-
 		$id=$this->session->userdata('uid');
 		$this->db->where('id',$id);
 
- 		if( $this->db->update('registration',$data[]))
+ 		if( $this->db->update('registration',$data))
     	  {
     		return true;
-    		$session=$this->session->set_flashdata('Successful','You are successfully registered in the system');
-    		$this->load->view('dashboard',$session);
-    		
-     	  }
+    		}
       	else
      	{
        		   return false;
      	}
 		
 	}
+	public function get5posts()
+	{
+		$this->db->select('*');
+		$this->db->from('posts');
+		$this->db->limit(1);
+		$query = $this->db->get();
+		$posts= $query->result_array();
+		foreach ($posts as $post ) 
+		{
+			return $post;
+		}
+	}
+
 }

@@ -13,7 +13,7 @@ Class Details extends CI_Controller
 		public function index()
 		{
 			$data['detail']=$this->Dashboard_model->getdetails();
-
+			$data['post']=$this->Dashboard_model->get5posts();
 			$this->load->view('templates/header');
 			$this->load->view('details/index', $data);
 			$this->load->view('templates/footer');
@@ -35,13 +35,20 @@ Class Details extends CI_Controller
 				
 			]);
 
-			$this->Dashboard_model->update($fname,
-			$lname,
-			$deptname,
-			$address,
-			$email,
-			$username,
-			$comment);
+			$this->Dashboard_model->update([
+			'fname'=>$fname,
+			'lname'=>$lname,
+			'deptname'=>$deptname,
+			'address'=>$address,
+			'email'=>$email,
+			'username'=>$username,
+			'comment'=>$comment
+			]);
+			$data=array(
+			'update'=>'Updated successfully');
+			$this->session->set_flashdata($data);
+			
+			redirect('details');
 
 		}
 

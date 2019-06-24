@@ -10,10 +10,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">
-    <?php if($this->session->flashdata('errors'));
-echo '<div class="alert alert-info">';
+    <?php if($this->session->flashdata('errors'))
+    {
+      echo '<div class="alert alert-info">';
    echo $this->session->flashdata('errors');
  echo "</div>";
+    }
+
  ?>
 
         <form action="<?php echo base_url() ?>User/addnotice" method="post">
@@ -36,21 +39,12 @@ echo '<div class="alert alert-info">';
             </div>
         </div>
 
-			 <div class="col-sm-6">
+			 <div class="col-sm-12">
           <div class="form-group ">
             <label class="control-label " for="name">
                 Title
               </label>
               <input class="form-control" name="title" type="text" />
-            </div>
-        </div> 
-
-         <div class="col-sm-6">
-          <div class="form-group ">
-            <label class="control-label " for="name">
-                Slug
-              </label>
-              <input class="form-control" name="slug" type="text" />
             </div>
         </div> 
 

@@ -9,7 +9,6 @@
 		}
 		public function index()
 		{	$data['feedback']=$this->Feedbackview_model->getallfeedback();
-			print_r($data['feedback']);
 			$this->load->view('user/header');
 			$this->load->view('viewfeedback/index',$data);
 		}

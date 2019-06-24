@@ -4,14 +4,14 @@
             <div class="head">
                 <p align="center"><b>
                         <h1 align="center">FullName:
-                    </b><b><?php echo $staffs['fname']." "." ".$staffs['lname'];?></b></h1>
+                    </b><b><?php echo $staffs['sname']." "." ".$staffs['slname'];?></b></h1>
                 </p>
             </div>
 
             <u>
                 <h4>
                     <div class="col-md-6"><b>Address:<?php echo $staffs['address']?></b></div>
-                    <div class="col-md-6"><span class="pull-right"><b>Department Name:<?php echo $staffs['departmentid']?></b></span></div>
+                    <div class="col-md-6"><span class="pull-right"><b><?php echo "Sunrise Company"?></b></span></div>
                 </h4>
             </u>
 

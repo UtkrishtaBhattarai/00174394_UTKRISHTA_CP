@@ -4,13 +4,15 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->load->model('Addpoll_model');
+			$this->load->model('AddPoll_model');
+			$this->load->model('Poll_model');
 			$this->load->database();
 		}
 		public function index()
 		{
-			$data['title'] = 'Add poll';
-			###$data['posts']=$this->Post_model->get_posts();
+			$data['count']= $this->AddPoll_model->countpoll();
+			$data['getdata']=$this->AddPoll_model->getpollresulta();
+			$data['poll']= $this->AddPoll_model->getallpoll();
 			$this->load->view('user/header');
 			$this->load->view('addpoll/index', $data);
 		}
@@ -42,7 +44,7 @@
 			$Option1= $this->input->post('txtopt1');
 			$Option2= $this->input->post('txtopt2');
 			
-			$this->Addpoll_model->create_poll([
+			$this->AddPoll_model->create_poll([
 			'ques'=>$ques,
 			'opt1'=>$Option1,
 			'opt2'=>$Option2
@@ -57,4 +59,13 @@
 		}
 
 	}
+
+	public function delete($id)
+	{
+		$this->AddPoll_model->deletepoll($id);
+		$this->session->unset_userdata('poll_id');
+		redirect('addpoll');
+		//$this->session->unset_(); unset poll data so that no poll will be seen
+	}
+
 }

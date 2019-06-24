@@ -7,9 +7,15 @@
       <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css">
       <link href="<?php echo base_url();?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
       <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
+       <script src="<?php echo base_url();?>assets/js/fstdropdown.js"></script>
+
+       <script src="<?php echo base_url();?>assets/js/fstdropdown.min.js"></script>
       <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
       <script src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/footer.css">
+      <script src="<?php echo base_url();?>assets/js/search.js"></script>
+      <link rel="stylesheet" type="text/css" href="assets/css/fstdropdown.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/fstdropdown.css">
+</head>
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -27,12 +33,12 @@
 
 
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="<?php echo base_url();?>registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="<?php echo base_url();?>login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <ul class="nav navbar-nav navbar-right">  
       <li><a href="<?php echo base_url('logout');?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href=""><span  class="fa fa-life-ring" aria-hidden="true"></span>Support</a></li>
     </ul>
   </div>
 </nav>
 
 
+ 
